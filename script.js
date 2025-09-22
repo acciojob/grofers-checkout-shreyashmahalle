@@ -9,16 +9,20 @@ const getSum = () => {
 
 	price.forEach(p => {
 		total += Number(p.textContent);
-})
+});
+	let old = document.querySelector("#ans");
+	if(old) old.remove;
+	
 	let row = document.createElement("tr");
 	let cell = document.createElement("td");
+	
 	cell.setAttribute("colspan", "2");
-	cell.textContent = "total"  + total;
+	cell.setAttribute("id", "ans");
+	cell.textContent = total;
 
 	row.appendChild(cell);
 	document.querySelector("table").appendChild(row);
 };
-
 
 getSumBtn.addEventListener("click", getSum);
 
